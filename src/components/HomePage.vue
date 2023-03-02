@@ -29,7 +29,7 @@
     <div class="story">
       <i class="fa fa-plus yourstoryaddplusicon"></i>
       <span style="position: absolute;
-top: 105px;left: 25px;" class="yourstoryaddplusicon">Your story</span>
+top: 105px;left: 25px;">Your story</span>
 
     </div>
     <!-- the first story will your story -->
@@ -39,15 +39,21 @@ top: 105px;left: 25px;" class="yourstoryaddplusicon">Your story</span>
     </div>
 
   </div>
+  <PostsSection></PostsSection>
 </template>
 
 <script>
+import PostsSection from "@/components/layouts/PostsSection.vue";
+
 export default {
   data() {
     return {
       isActiveMenu: false,
     };
   },
+  components : {
+    PostsSection : PostsSection,
+  }
 }
 </script>
 
@@ -58,6 +64,10 @@ export default {
   overflow: auto;
   /* scrollbar-width: none; */
   box-shadow: 1px 1px 3px #464646;
+  background: #efefef;
+  overflow-y: hidden;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .story {
@@ -70,6 +80,8 @@ export default {
   min-width: 100px;
   height: 100px;
   /* display: inline-bloc; */
+  cursor: pointer;
+  margin:0 10px;
 }
 
 .story img {
@@ -138,6 +150,7 @@ export default {
     box-shadow: 2px 2px 5px #000;
     border-radius: 15px;
     margin: 50px 10px;
+    z-index: 999;
   }
 
   #navbar.active {
