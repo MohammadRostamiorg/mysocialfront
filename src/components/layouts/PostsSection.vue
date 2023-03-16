@@ -1,5 +1,11 @@
 <template>
 <div class="post" v-bind:key="i" v-for="i in 7">
+  <div class="PostUserInfo">
+    <span class="PostUserAvatar"></span>
+    <span class="PostUserName">
+    Rostami_dev
+    </span>
+  </div>
   <img src="https://www.calliaweb.co.uk/wp-content/uploads/2015/10/600x600.jpg" alt="" class="PostImg">
   <div class="actions">
     <i class="fa-regular fa-heart LikeIcon"></i>
@@ -21,7 +27,7 @@ export default {
 
 <style scoped>
 .post .actions{
-  padding: 5px;
+  padding: 15px;
   display: flex;
   background: #dadada;
 
@@ -32,12 +38,25 @@ export default {
   cursor: pointer;
 
 }
+.PostUserInfo{
+  padding: 5px;
+}
+.PostUserAvatar{
+  display: inline-block;
+  background: url("../../assets/images/profile12.jpg");
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  border-radius: 50%;
+  vertical-align: middle;
+}
 
 
 @media only screen and (max-width: 980px) {
   .post{
     display: flex;
     flex-direction: column;
+    box-shadow: 1px 1px 5px  #555555;
   }
   .PostImg{
     width: 100%;
